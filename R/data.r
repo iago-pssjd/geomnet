@@ -1,11 +1,11 @@
 #' Bike sharing network (directed)
 #'
-#' This network is a summary of the bike trips taken by customers of the bike sharing company Capital Bikeshare (\url{https://secure.capitalbikeshare.com/profile/}) during the second quarter of 2015.
+#' This network is a summary of the bike trips taken by customers of the bike sharing company Capital Bikeshare (\url{https://capitalbikeshare.com}) during the second quarter of 2015.
 #' Only trips between stations in the vicinity of Rockville, MD, are included.
 #' The data is organized as a list of two datasets, vertices (stations) and edges (trips between stations),
 #' as follows:
 #'
-#' @references \url{https://secure.capitalbikeshare.com/profile/}
+#' @references \url{https://capitalbikeshare.com}
 #' @format A list of two data frames:
 #' \itemize{
 #' \item the trips data set consists of four variables of length 53:
@@ -37,7 +37,7 @@
 #' \item the edges data set consists of three variables of length 27:
 #' \itemize{
 #'   \item from, to: factor variables of blood types describing the relationship 'is compatible with'
-#'   \item group\_to: factor variable with levels 'same' and 'diff' for same or different blood type group not regarding the rho-gam factor.
+#'   \item group_to: factor variable with levels 'same' and 'diff' for same or different blood type group not regarding the rho-gam factor.
 #' }
 #' \item the vertices data set consists of five variables and 32 rows:
 #' \itemize{

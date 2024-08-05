@@ -16,7 +16,7 @@ library(ggplot2)
 library(geomnet)
 data(blood)
 p <- ggplot(data = blood$edges, aes(from_id = from, to_id = to))
-p + geom_net(vertices=blood$vertices, aes(colour=..type..)) + theme_net()
+p + geom_net(vertices=blood$vertices, aes(colour=after_stat(type))) + theme_net()
 #'
 bloodnet <- fortify(as.edgedf(blood$edges), blood$vertices)
 p <- ggplot(data = bloodnet, aes(from_id = from_id, to_id = to_id))

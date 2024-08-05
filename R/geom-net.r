@@ -209,7 +209,7 @@ GeomNet <- ggplot2::ggproto("GeomNet", ggplot2::Geom,
   setup_data = function(data, params, mapping) {
 #    cat("setup_data geom_net\n")
 
-##browser()
+##BROWSER()
     data$from <- as.character(data$from)
     data$to <- as.character(data$to)
     selfie <- (data$from == data$to) & (params$selfloops == TRUE)
@@ -237,7 +237,7 @@ GeomNet <- ggplot2::ggproto("GeomNet", ggplot2::Geom,
       yend = data$yend,
       weight = data$weight,
       colour = ecolour %||% ifelse(data$.samegroup, data$colour, "grey40"),
-      size = data$linewidth %||% (data$size / 4),
+      linewidth = data$linewidth %||% (data$size / 4),
       nodesize = data$size,
       alpha = ealpha %||% data$alpha,
       linetype=data$linetype,
@@ -312,9 +312,9 @@ GeomNet <- ggplot2::ggproto("GeomNet", ggplot2::Geom,
     if ((nrow(selfy) > 0) & selfloops) {
       selfy$radius <- min(0.04, 1/sqrt(nrow(vertices)))
       selfy <- transform(selfy,
-                           x = x + (radius + nodesize/(100*.pt) + size/100)/sqrt(2),
-                           y = y + (radius + nodesize/(100*.pt) + size/100)/sqrt(2),
-                           linewidth = size*.pt,
+                           x = x + (radius + nodesize/(100*.pt) + linewidth/100)/sqrt(2),
+                           y = y + (radius + nodesize/(100*.pt) + linewidth/100)/sqrt(2),
+                           linewidth = linewidth*.pt,
                            fill = NA
       )
       selfies_draw <- GeomCircle$draw_panel(selfy, panel_scales, coord)
@@ -326,8 +326,8 @@ GeomNet <- ggplot2::ggproto("GeomNet", ggplot2::Geom,
       selfy_arrows <- transform (
         selfy,
         xend = x - 0.5* arrowsize*.pt/100,
-        yend = y-0.04 - size/100,
-        y = y-0.04 - size/100
+        yend = y-0.04 - linewidth/100,
+        y = y-0.04 - linewidth/100
       )
       selfies_arrows <- GeomSegment$draw_panel(selfy_arrows, panel_scales, coord,
                                                arrow=arrow)

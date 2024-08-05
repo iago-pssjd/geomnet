@@ -18,7 +18,7 @@
 #' nrow(subset(blood$edges, from != to))
 jtt <- function(data, from_id, to_id) {
   data <- data[,c(from_id, to_id)]
-  X <- network::as.matrix.network(network::as.network.matrix(data))
+  X <- network::as.matrix.network(network::as.network.matrix(as.matrix(data), loops = TRUE))
   diag(X) <- 0
   X2 <- X %*% X
   #  browser()

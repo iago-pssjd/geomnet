@@ -77,7 +77,7 @@ compute_network = function(data, layout.alg="kamadakawai", layout.par=list(), si
 
     # there should not be any missing values at this point, but just make sure
   if (any(is.na(edges$from_id))) message(sprintf("%d missing values excluded\n", sum(is.na(edges$from_id))))
-  net <- network::as.network(na.omit(edges[,1:2]), matrix.type = "edgelist")
+  net <- network::as.network(na.omit(as.matrix(edges[,1:2])), matrix.type = "edgelist", loops = TRUE)
 
   edgeweights <- diff(range(edges$wt)) != 0
   if (edgeweights) {

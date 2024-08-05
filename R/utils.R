@@ -23,7 +23,7 @@ as.adjmat <- function(dat){
 #' @param dat A network edgelist of class \code{"data.frame"} for use with \code{\link{fortify.edgedf}}.
 #' @export
 as.edgedf <- function(dat){
-  if (class(dat) != "data.frame"){
+  if (!inherits(dat, "data.frame")){
     stop("as.edgedf requires a data.frame object")
   }
   if (ncol(dat) < 2){

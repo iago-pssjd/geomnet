@@ -1,10 +1,11 @@
 Package: geomnet
 Type: Package
 Title: Network Visualization in the 'ggplot2' Framework
-Version: 0.3.1
-Date: 2020-11-25
+Version: 0.3.2
+Date: 2024-08-17
 Authors@R: c(
-    person("Sam", "Tyner", email = "sctyner90@gmail.com", role = c("aut", "cre")),
+    person("Iago", "Giné-Vázquez", email = "iago.gin-vaz@protonmail.com", role = c("cre")),
+    person("Sam", "Tyner", email = "sctyner90@gmail.com", role = c("aut")),
     person("Heike", "Hofmann", email = "hofmann@iastate.edu", role = c("aut", "ctb")),
     person("Nicholas", "Tierney", email = "nicholas.tierney@gmail.com",  role = "ctb")
   )
@@ -35,4 +36,4 @@ Suggests:
 VignetteBuilder: knitr
 Encoding: UTF-8
 Language: en-US
-RoxygenNote: 7.1.0
+RoxygenNote: 7.3.2

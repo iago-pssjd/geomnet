@@ -8,7 +8,7 @@ Status](http://www.r-pkg.org/badges/version/geomnet)](https://cran.r-project.org
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/geomnet)](https://www.r-pkg.org/pkg/geomnet)
 [![Travis-CI Build
-Status](https://travis-ci.org/sctyner/geomnet.svg?branch=master)](https://travis-ci.org/sctyner/geomnet)
+Status](https://app.travis-ci.com/sctyner/geomnet.svg?branch=master)](https://app.travis-ci.com/sctyner/geomnet)
 
 `geomnet` is a package built on top of the most recent major `ggplot2`
 release. It provides a `ggplot2` `geom` called `geom_net` to visualize
@@ -45,7 +45,7 @@ ggplot(data = TEnet,
     aes(fontsize = degree), directed = TRUE,
     labelon = TRUE, size = 1, labelcolour = 'black',
     ecolour = "grey70", arrowsize = 0.5,
-    linewidth = 0.5, repel = TRUE) +
+    linewidth = 0.5, repel = FALSE) +
   theme_net() +
   xlim(c(-0.05, 1.05))
 ```
@@ -105,7 +105,7 @@ hp.all <- fortify(as.edgedf(hp.edges), hp.chars, group = "book")
 # only plot the characters with any connections in a given book. 
 ggplot(data=hp.all, aes(from_id = from, to_id = to_id)) + 
   geom_net(fiteach=T, directed = T, size = 3, linewidth = .5, 
-           ealpha = .5, labelon = T, fontsize = 3, repel = T, 
+           ealpha = .5, labelon = T, fontsize = 3, repel = FALSE, 
            labelcolour = "black", arrowsize = .5, singletons = FALSE,
            aes(colour = house, group = house, shape = gender)) + 
   scale_colour_manual(values = c("#941B08","#F1F31C", 
@@ -116,9 +116,9 @@ ggplot(data=hp.all, aes(from_id = from, to_id = to_id)) +
 
 <img src="man/figures/README-HPplot-1.png" style="display: block; margin: auto;" />
 
-## Interactivity with `plotly`\!
+## Interactivity with `plotly`!
 
-Now including interactivity with `ggplotly()`\!
+Now including interactivity with `ggplotly()`!
 
 ``` r
 # blood donation example
