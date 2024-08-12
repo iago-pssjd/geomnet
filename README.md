@@ -4,11 +4,9 @@
 # geomnet <img src="man/figures/logo.png" align="right" width="120" />
 
 [![CRAN
-Status](http://www.r-pkg.org/badges/version/geomnet)](https://cran.r-project.org/package=geomnet)
+status](https://badges.cranchecks.info/summary/geomnet.svg)](https://cran.r-project.org/web/checks/check_results_geomnet.html)
 [![CRAN RStudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/geomnet)](https://www.r-pkg.org/pkg/geomnet)
-[![Travis-CI Build
-Status](https://travis-ci.org/sctyner/geomnet.svg?branch=master)](https://travis-ci.org/sctyner/geomnet)
 
 `geomnet` is a package built on top of the most recent major `ggplot2`
 release. It provides a `ggplot2` `geom` called `geom_net` to visualize
@@ -105,7 +103,7 @@ hp.all <- fortify(as.edgedf(hp.edges), hp.chars, group = "book")
 # only plot the characters with any connections in a given book. 
 ggplot(data=hp.all, aes(from_id = from, to_id = to_id)) + 
   geom_net(fiteach=T, directed = T, size = 3, linewidth = .5, 
-           ealpha = .5, labelon = T, fontsize = 3, repel = T, 
+           ealpha = .5, labelon = T, fontsize = 3, repel = TRUE, 
            labelcolour = "black", arrowsize = .5, singletons = FALSE,
            aes(colour = house, group = house, shape = gender)) + 
   scale_colour_manual(values = c("#941B08","#F1F31C", 
@@ -116,9 +114,9 @@ ggplot(data=hp.all, aes(from_id = from, to_id = to_id)) +
 
 <img src="man/figures/README-HPplot-1.png" style="display: block; margin: auto;" />
 
-## Interactivity with `plotly`\!
+## Interactivity with `plotly`!
 
-Now including interactivity with `ggplotly()`\!
+Now including interactivity with `ggplotly()`!
 
 ``` r
 # blood donation example
@@ -152,6 +150,6 @@ gg <- ggplot(data = ftnet,
   theme_net() +
   theme(legend.position = "bottom") +
   scale_colour_brewer("Conference", palette = "Paired")  +
-  guides(linetype = FALSE)
+  guides(linetype = "none")
 ggplotly(gg)
 ```

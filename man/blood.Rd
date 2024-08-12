@@ -10,7 +10,7 @@ A list of two data frames:
 \item the edges data set consists of three variables of length 27:
 \itemize{
   \item from, to: factor variables of blood types describing the relationship 'is compatible with'
-  \item group\_to: factor variable with levels 'same' and 'diff' for same or different blood type group not regarding the rho-gam factor.
+  \item group_to: factor variable with levels 'same' and 'diff' for same or different blood type group not regarding the rho-gam factor.
 }
 \item the vertices data set consists of five variables and 32 rows:
 \itemize{
