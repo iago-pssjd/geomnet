@@ -173,9 +173,9 @@ fortify.adjmat <- function(model, data = NULL,  ...){
   if (class(froms) != class(tos)){
     if (class(froms) %in% c("numeric", "integer")){
       tos <- readr::parse_number(tos)
-    } else if (class(froms) == "factor" && class(tos) == "character"){
+    } else if (inherits(froms, "factor") && inherits(tos, "character")){
       froms <- as.character(froms)
-    } else if (class(tos) == "factor" && class(froms) == "character"){
+    } else if (inherits(tos, "factor") && inherits(froms, "character")){
       tos <- as.character(tos)
     } else {stop("Error: Cannot match from and to columns. Please provide an\nadjacency matrix with row or column names.")}
   }
