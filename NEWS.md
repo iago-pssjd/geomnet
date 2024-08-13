@@ -1,3 +1,16 @@
+# geomnet 0.3.4
+
+## Bugs and CRAN warnings or errors
+
+- Use `inherits()` where `class()` binary checks were yet present
+- Update non-working old webpages through documentation
+- Coerce to matrices to work with `as.network.matrix()` on `network` (>= v1.17)
+- Fixed issue with `ggrepel` (>= 0.9.0)
+- Adapt to current releases of `ggplot2`:
+    + `linewidth` instead of `size` for scaling the width of lines in line based geoms for `ggplot2` (>= 3.4.0)
+    + `after_stat` instead of dot-dot notation (`..var..`) for `ggplot2` (>= 3.4.0)
+    + `<scale> = "none"` instead of `<scale> = FALSE` to remove guides for `ggplot2` (>= 3.3.4)
+
 # geomnet 0.3.1
 
 - Update to fix changes in dplyr - specifically use `dplyr::n()`
