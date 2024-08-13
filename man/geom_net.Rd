@@ -313,6 +313,28 @@ p <- ggplot(data=ftnet, aes(from_id=from_id, to_id=to_id))
 p + geom_net(aes(colour=value), linewidth=0.75, size=4.5, ecolour="grey80") +
   scale_colour_brewer("Conference", palette="Paired") + theme_net() +
   theme(legend.position="bottom")
-  }
+
+## **GGplot2** theme attribute inheritance network
+if(requireNamespace("ggrepel", quietly = TRUE)){
+library(dplyr)
+data(theme_elements)
+# data step
+TEnet <- fortify(as.edgedf(theme_elements$edges[,c("parent", "child")]), theme_elements$vertices)
+# create a degree variable for use later
+TEnet <- TEnet \%>\%
+  group_by(from_id) \%>\%
+  mutate(degree = sqrt(10 * n() + 1))
+# plot
+ggplot(data = TEnet,
+       aes(from_id = from_id, to_id = to_id)) +
+  geom_net(layout.alg = "fruchtermanreingold",
+    aes(fontsize = degree), directed = TRUE,
+    labelon = TRUE, size = 1, labelcolour = 'black',
+    ecolour = "grey70", arrowsize = 0.5,
+    linewidth = 0.5, repel = TRUE) +
+  theme_net() +
+  xlim(c(-0.05, 1.05))
+}
+}
 }
 \keyword{datasets}
