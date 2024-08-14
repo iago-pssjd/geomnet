@@ -15,8 +15,8 @@ calculate network layouts with the `sna` package. Finally, the function
 `geom_circle` is included to draw circles using `ggplot2`.
 
 You can install `geomnet` directly from CRAN
-`install.packages('geomnet')` or from Github
-`devtools::install_github("sctyner/geomnet")`
+`install.packages('geomnet')` or from GitLab
+`devtools::install_gitlab("iagogv/geomnet")`
 
 # Examples
 

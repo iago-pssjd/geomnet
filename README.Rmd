@@ -13,8 +13,8 @@ output: github_document
 
 You can install `geomnet` directly from CRAN
 `install.packages('geomnet')`
-or from Github
-`devtools::install_github("sctyner/geomnet")`
+or from GitLab
+`devtools::install_gitlab("iagogv/geomnet")`
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
