@@ -28,7 +28,8 @@ stages:
 test-job:
   stage: test
   script:
-    - R -e 'devtools::check()'
+    - R CMD check ./ --no-manual
+    - R -e 'devtools::test()'
 
 
 pages:
