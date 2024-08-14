@@ -3,4 +3,7 @@ pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   geomnet-vignette: geomnet-vignette.html
-last_built: 2024-08-14T16:00Z
+last_built: 2024-08-14T17:17Z
+urls:
+  reference: https://iagogv.gitlab.io/geomnet/reference
+  article: https://iagogv.gitlab.io/geomnet/articles
