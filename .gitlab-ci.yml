@@ -1,0 +1,45 @@
+variables:
+  CRAN_MIRROR: "https://cloud.r-project.org"
+  _R_CHECK_CRAN_INCOMING: "true"
+  _R_CHECK_FORCE_SUGGESTS_: "true"
+  _R_CHECK_NO_STOP_ON_TEST_ERROR_: "true"
+  APT_PKGS: "libcurl4-openssl-dev libssh2-1-dev libssl-dev libxml2-dev zlib1g-dev git"
+
+
+
+# The Docker image that will be used to build your app
+image: rocker/tidyverse
+# Functions that should be executed before the build script is run
+before_script:
+  - apt-get update
+  - apt-get install -y --no-install-recommends ${APT_PKGS}
+  - apt-get install -y --no-install-recommends qpdf
+  - R -e 'install.packages(c("sna", "network", "plotly", "ggrepel", "ggmap", "igraph", "spelling"), repos = Sys.getenv("CRAN_MIRROR"))'
+
+
+
+# define stages of runner. at the moment,
+stages:
+  - test
+  - deploy
+
+
+# define test job
+test-job:
+  stage: test
+  script:
+    - R -e 'devtools::check()'
+
+
+pages:
+  stage: deploy
+  script:
+    - R -e 'pkgdown::build_site()'
+  artifacts:
+    paths:
+      # The folder that contains the files to be exposed at the Page URL
+      - public
+  rules:
+    # This ensures that only pushes to the default branch will trigger
+    # a pages deploy
+    - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH

@@ -1,0 +1,6 @@
+pandoc: 2.17.1.1
+pkgdown: 2.1.0
+pkgdown_sha: ~
+articles:
+  geomnet-vignette: geomnet-vignette.html
+last_built: 2024-08-14T16:00Z
