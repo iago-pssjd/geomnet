@@ -1,4 +1,10 @@
+url: https://iagogv.gitlab.io/geomnet
+
 destination: public
 template:
   bootstrap: 5
 
+repo:
+  url:
+    home: https://gitlab.com/iagogv/geomnet
+    source: https://gitlab.com/iagogv/geomnet
