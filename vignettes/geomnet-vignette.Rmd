@@ -6,7 +6,7 @@ output:
   rmarkdown::html_vignette:
   toc: true
 vignette: >
-  %\VignetteIndexEntry{examples}
+  %\VignetteIndexEntry{Examples for using `geomnet`}
   %\VignetteEngine{knitr::rmarkdown}
   \usepackage[utf8]{inputenc}
 ---
