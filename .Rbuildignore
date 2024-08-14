@@ -5,7 +5,7 @@ cran-comments.md
 ^README\.Rmd$
 ^README-.*\.png$
 ^\.travis\.yml$
-^docs$
+^public$
 pkgdown
 ^CRAN-RELEASE$
 ^.gitlab-ci.yml$
