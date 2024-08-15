@@ -409,6 +409,8 @@ GeomNet <- ggplot2::ggproto("GeomNet", ggplot2::Geom,
       } else {
         if(repel){
 	  labels$point.size <- 1
+	  labels$bg.colour <- NA
+	  labels$bg.r <- 0.1
           label_grob <- ggrepel::GeomTextRepel$draw_panel(labels, panel_scales, coord)
         } else{label_grob <- ggplot2::GeomText$draw_panel(labels, panel_scales, coord)}
       }
